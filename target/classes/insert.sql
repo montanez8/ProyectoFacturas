@@ -20,19 +20,21 @@ VALUES
 ('Producto19', 'Descripción del Producto 19', 80.00, 50.00),
 ('Producto20', 'Descripción del Producto 20', 75.00, 48.00);
 
--- Insertar facturas
-INSERT INTO factura (fecha, cliente_id) 
-VALUES
-('2024-01-15 10:00:00', 1),
-('2024-01-16 11:30:00', 2),
-('2024-01-17 14:45:00', 3),
-('2024-01-18 09:15:00', 4),
-('2024-01-19 16:20:00', 5),
-('2024-01-23 13:10:00', 1),
-('2024-01-25 15:30:00', 2),
-('2024-01-27 18:00:00', 3),
-('2024-01-29 10:45:00', 4),
-('2024-01-31 12:25:00', 5);
+
+-- insert de la tabla impuesto  
+INSERT INTO dabase_factura.impuesto (id, anio, porcentaje) VALUES (1, 2023, 16);
+INSERT INTO dabase_factura.impuesto (id, anio, porcentaje) VALUES (2, 2024, 18);
+
+
+-- insert de la tabla Factura  -- la factura recibe de acuerdo al anio el descuento que se le va aplicar 
+
+INSERT INTO dabase_factura.factura (numeroFactura, fecha, cliente_id, impuesto_id, totalImpuesto) VALUES (16, '2024-02-13 00:00:00', 1, 2, 108);
+INSERT INTO dabase_factura.factura (numeroFactura, fecha, cliente_id, impuesto_id, totalImpuesto) VALUES (17, '2024-02-13 00:00:00', 1, 2, 25.2);
+INSERT INTO dabase_factura.factura (numeroFactura, fecha, cliente_id, impuesto_id, totalImpuesto) VALUES (18, '2024-02-13 00:00:00', 3, 2, 99);
+INSERT INTO dabase_factura.factura (numeroFactura, fecha, cliente_id, impuesto_id, totalImpuesto) VALUES (19, '2024-02-13 00:00:00', 4, 2, 62.1);
+INSERT INTO dabase_factura.factura (numeroFactura, fecha, cliente_id, impuesto_id, totalImpuesto) VALUES (20, '2024-02-13 00:00:00', 5, 2, 900);
+
+
 
 -- Insertar items de factura
 INSERT INTO item_factura (factura_numeroFactura, producto_codigo, cantidad, importe) 
@@ -45,5 +47,8 @@ VALUES
 (8, 6, 2, 120.00),
 (9, 7, 3, 195.00),
 (10, 8, 1, 75.00);
+
+
+-- 
 
 
