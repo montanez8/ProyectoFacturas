@@ -2,6 +2,7 @@ package com.campusland.views;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -37,19 +38,16 @@ public class ViewFactura extends ViewMain {
                     generarReporteDian();
                     break;
                 case 4:
-                  //  informeTotalVentas();
+                    //  informeTotalVentas();
                     break;
                 case 5:
-                    //  listaDesendenteClientes();
-                        break;
-                case 6:
-                    //  listaDesendenteProductos();
+                    mostrarClientesPorCompras();
                     break;
-                    case 7:
-                        filtarFacturAnio(serviceFactura.listar(), 2024).forEach(System.out::println);
-                        break;
+                case 6:
+                    mostrarProductosMasVendidos();
+                    break;
 
-                case 8:
+                case 7:
                     System.out.println("Fin");
                     break;
 
@@ -151,9 +149,6 @@ public class ViewFactura extends ViewMain {
     }
 
 
-
-
-
     public static void filtarFacturaAnio(List<Factura> facturas, int year) {
         List<Map<String, Object>> filteredFacturas = new ArrayList<>();
         for (Factura factura : facturas) {
@@ -184,6 +179,29 @@ public class ViewFactura extends ViewMain {
             file.write(json);
             file.flush();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public static void mostrarClientesPorCompras() {
+        try {
+            List<Map<String, Object>> clientes = serviceFactura.listarClientesPorCompras();
+            for (Map<String, Object> cliente : clientes) {
+                System.out.println("ID: " + cliente.get("id") + ", Nombre: " + cliente.get("nombre") + ", Apellido: " + cliente.get("apellido") + ", Total compras: " + cliente.get("total_compras"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void mostrarProductosMasVendidos() {
+        try {
+            List<Map<String, Object>> productos = serviceFactura.listarProductosMasVendidos();
+            for (Map<String, Object> producto : productos) {
+                System.out.println("Código: " + producto.get("codigo") + ", Nombre: " + producto.get("nombre") + ", Total vendido: " + producto.get("total_vendido"));
+            }
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

@@ -1,6 +1,8 @@
 package com.campusland.respository.impl.implfactura;
 
+import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import com.campusland.exceptiones.facturaexceptions.FacturaExceptionInsertDataBase;
 import com.campusland.respository.RepositoryFactura;
@@ -22,6 +24,16 @@ public class RepositoryFacturaJsonImpl implements RepositoryFactura {
         listFacturas.add(factura);
         conexion.saveData(listFacturas);
        
+    }
+
+    @Override
+    public List<Map<String, Object>> listarClientesPorCompras() throws SQLException {
+        return null;
+    }
+
+    @Override
+    public List<Map<String, Object>> listarProductosMasVendidos() throws SQLException {
+        return null;
     }
 
 }

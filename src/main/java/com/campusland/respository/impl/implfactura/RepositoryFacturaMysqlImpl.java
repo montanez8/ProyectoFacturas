@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.campusland.exceptiones.facturaexceptions.FacturaExceptionInsertDataBase;
@@ -17,6 +18,7 @@ import com.campusland.utils.conexionpersistencia.conexionbdmysql.ConexionBDMysql
 
 
 import java.sql.Statement;
+import java.util.Map;
 
 public class RepositoryFacturaMysqlImpl implements RepositoryFactura {
 
@@ -38,9 +40,13 @@ public class RepositoryFacturaMysqlImpl implements RepositoryFactura {
     private static final String INSERT_FACTURA = "INSERT INTO factura (fecha, cliente_id, impuesto_id,totalImpuesto) VALUES (?, ?, ?,?)";
     private static final String INSERT_ITEM_FACTURA = "INSERT INTO item_factura (factura_numeroFactura, producto_codigo, cantidad, importe) VALUES (?, ?, ?, ?)";
 
+    private static final String SQL_LISTAR_CLIENTES_POR_COMPRAS = "SELECT DISTINCT c.id, c.nombre, c.apellido, SUM(ifa.importe) as total_compras FROM cliente c JOIN factura f ON c.id = f.cliente_id JOIN item_factura ifa ON f.numeroFactura = ifa.factura_numeroFactura GROUP BY c.id, c.nombre, c.apellido ORDER BY total_compras DESC";
+    private static final String SQL_LISTAR_PRODUCTOS_MAS_VENDIDOS = "SELECT DISTINCT p.codigo, p.nombre, SUM(ifa.cantidad) as total_vendido FROM producto p JOIN item_factura ifa ON p.codigo = ifa.producto_codigo GROUP BY p.codigo, p.nombre ORDER BY total_vendido DESC";
+
     private Connection getConnection() throws SQLException {
         return ConexionBDMysql.getInstance();
     }
+
 
     @Override
     public List<Factura> listar() {
@@ -160,6 +166,42 @@ public class RepositoryFacturaMysqlImpl implements RepositoryFactura {
         final Producto producto = new Producto(codigo, nombre, descripcion, precioVenta, precioCompra);
         return new ItemFactura(rs.getInt("cantidad"), producto);
 
+    }
+
+
+    public List<Map<String, Object>> listarClientesPorCompras() throws SQLException {
+        List<Map<String, Object>> clientes = new ArrayList<>();
+        try (Connection conn = getConnection();
+                PreparedStatement preparedStatement = conn.prepareStatement(SQL_LISTAR_CLIENTES_POR_COMPRAS)) {
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                while (rs.next()) {
+                    Map<String, Object> cliente = new HashMap<>();
+                    cliente.put("id", rs.getInt("id"));
+                    cliente.put("nombre", rs.getString("nombre"));
+                    cliente.put("apellido", rs.getString("apellido"));
+                    cliente.put("total_compras", rs.getDouble("total_compras"));
+                    clientes.add(cliente);
+                }
+            }
+        }
+        return clientes;
+    }
+
+    public List<Map<String, Object>> listarProductosMasVendidos() throws SQLException {
+        List<Map<String, Object>> productos = new ArrayList<>();
+        try (Connection conn = getConnection();
+                PreparedStatement preparedStatement = conn.prepareStatement(SQL_LISTAR_PRODUCTOS_MAS_VENDIDOS)) {
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                while (rs.next()) {
+                    Map<String, Object> producto = new HashMap<>();
+                    producto.put("codigo", rs.getString("codigo"));
+                    producto.put("nombre", rs.getString("nombre"));
+                    producto.put("total_vendido", rs.getInt("total_vendido"));
+                    productos.add(producto);
+                }
+            }
+        }
+        return productos;
     }
 
 
