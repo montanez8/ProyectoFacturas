@@ -1,0 +1,167 @@
+[
+  {
+    "nombreCliente": "1001",
+    "totalFactura": 220.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Juan",
+    "telefonoCliente": "Calle 123",
+    "direccionCliente": "jperez@gmail.com",
+    "numeroFactura": 1,
+    "documentoCliente": "31448975",
+    "fechaVenta": "2024-01-15T10:00:00"
+  },
+  {
+    "nombreCliente": "1002",
+    "totalFactura": 200.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Maria",
+    "telefonoCliente": "Avenida 456",
+    "direccionCliente": "mlopez@gmail.com",
+    "numeroFactura": 2,
+    "documentoCliente": "31567890",
+    "fechaVenta": "2024-01-16T11:30:00"
+  },
+  {
+    "nombreCliente": "1003",
+    "totalFactura": 55.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Carlos",
+    "telefonoCliente": "Carrera 789",
+    "direccionCliente": "cgomez@gmail.com",
+    "numeroFactura": 3,
+    "documentoCliente": "31789012",
+    "fechaVenta": "2024-01-17T14:45:00"
+  },
+  {
+    "nombreCliente": "1004",
+    "totalFactura": 0.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Laura",
+    "telefonoCliente": "Calle 567",
+    "direccionCliente": "lmartinez@gmail.com",
+    "numeroFactura": 4,
+    "documentoCliente": "31890123",
+    "fechaVenta": "2024-01-18T09:15:00"
+  },
+  {
+    "nombreCliente": "1005",
+    "totalFactura": 0.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Pedro",
+    "telefonoCliente": "Calle 890",
+    "direccionCliente": "prodriguez@gmail.com",
+    "numeroFactura": 5,
+    "documentoCliente": "31901234",
+    "fechaVenta": "2024-01-19T16:20:00"
+  },
+  {
+    "nombreCliente": "1001",
+    "totalFactura": 0.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Juan",
+    "telefonoCliente": "Calle 123",
+    "direccionCliente": "jperez@gmail.com",
+    "numeroFactura": 6,
+    "documentoCliente": "31448975",
+    "fechaVenta": "2024-01-23T13:10:00"
+  },
+  {
+    "nombreCliente": "1002",
+    "totalFactura": 0.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Maria",
+    "telefonoCliente": "Avenida 456",
+    "direccionCliente": "mlopez@gmail.com",
+    "numeroFactura": 7,
+    "documentoCliente": "31567890",
+    "fechaVenta": "2024-01-25T15:30:00"
+  },
+  {
+    "nombreCliente": "1003",
+    "totalFactura": 130.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Carlos",
+    "telefonoCliente": "Carrera 789",
+    "direccionCliente": "cgomez@gmail.com",
+    "numeroFactura": 8,
+    "documentoCliente": "31789012",
+    "fechaVenta": "2024-01-27T18:00:00"
+  },
+  {
+    "nombreCliente": "1004",
+    "totalFactura": 240.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Laura",
+    "telefonoCliente": "Calle 567",
+    "direccionCliente": "lmartinez@gmail.com",
+    "numeroFactura": 9,
+    "documentoCliente": "31890123",
+    "fechaVenta": "2024-01-29T10:45:00"
+  },
+  {
+    "nombreCliente": "1005",
+    "totalFactura": 75.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Pedro",
+    "telefonoCliente": "Calle 890",
+    "direccionCliente": "prodriguez@gmail.com",
+    "numeroFactura": 10,
+    "documentoCliente": "31901234",
+    "fechaVenta": "2024-01-31T12:25:00"
+  },
+  {
+    "nombreCliente": "1005",
+    "totalFactura": 5660.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Pedro",
+    "telefonoCliente": "Calle 890",
+    "direccionCliente": "prodriguez@gmail.com",
+    "numeroFactura": 11,
+    "documentoCliente": "31901234",
+    "fechaVenta": "2024-02-13T00:00:00"
+  },
+  {
+    "nombreCliente": "1001",
+    "totalFactura": 50.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Juan",
+    "telefonoCliente": "Calle 123",
+    "direccionCliente": "jperez@gmail.com",
+    "numeroFactura": 12,
+    "documentoCliente": "31448975",
+    "fechaVenta": "2024-02-13T00:00:00"
+  },
+  {
+    "nombreCliente": "1001",
+    "totalFactura": 50.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Juan",
+    "telefonoCliente": "Calle 123",
+    "direccionCliente": "jperez@gmail.com",
+    "numeroFactura": 13,
+    "documentoCliente": "31448975",
+    "fechaVenta": "2024-02-13T00:00:00"
+  },
+  {
+    "nombreCliente": "1001",
+    "totalFactura": 100.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Juan",
+    "telefonoCliente": "Calle 123",
+    "direccionCliente": "jperez@gmail.com",
+    "numeroFactura": 14,
+    "documentoCliente": "31448975",
+    "fechaVenta": "2024-02-13T00:00:00"
+  },
+  {
+    "nombreCliente": "1001",
+    "totalFactura": 50.0,
+    "impuestoPagado": 0.0,
+    "apellidoCliente": "Juan",
+    "telefonoCliente": "Calle 123",
+    "direccionCliente": "jperez@gmail.com",
+    "numeroFactura": 15,
+    "documentoCliente": "31448975",
+    "fechaVenta": "2024-02-13T00:00:00"
+  }
+]

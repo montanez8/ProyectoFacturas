@@ -1,0 +1,13 @@
+[
+  {
+    "nombreCliente": "1001",
+    "totalFactura": 708.0,
+    "impuestoPagado": 108.0,
+    "apellidoCliente": "Juan",
+    "telefonoCliente": "Calle 123",
+    "direccionCliente": "jperez@gmail.com",
+    "numeroFactura": 16,
+    "documentoCliente": "31448975",
+    "fechaVenta": "2024-02-13T00:00:00"
+  }
+]
